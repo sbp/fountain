@@ -1,0 +1,82 @@
+=head1 NAME
+
+fountain - take a single input stream and write it to multiple
+output streams.
+
+=head1 SYNOPSIS
+
+B<fountain> [B<-b> I<buffer size> B<-h> B<-v> B<-V>] I<command>
+[I<command> ...]
+
+=head1 DESCRIPTION
+
+B<fountain> reads a single input stream, from the standard input
+stream, and writes it to multiple commands.  It may also write the
+data directly to the standard output stream if the B<-s> option is
+specified.
+
+Command (including any arguments) are specified on the command line
+(and must be quoted from the shell if they contain whitespace).  Each
+command which will be passed the input stream on its standard input
+stream.
+
+To improve overall performance, the input stream is written using
+non-blocking I/O to each command. The size of the buffer used to store
+the input stream may be specfied with the B<-b> option.
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<-b> I<buffer size>
+
+The size of the buffer (in bytes) used to transfer the input stream.  It
+defaults to 8192 bytes.
+
+=item B<-h>
+
+Output help.
+
+=item B<-s>
+
+In addition to writing to the commands given by B<-c>, act as a
+filter, copying from standard input to standard output.
+
+=item B<-v>
+
+Be a bit more verbose.
+
+=item B<-V>
+
+Output version information.
+
+=back
+
+=head1 BUGS
+
+Non-blocking I/O only works for buffers larger than 10240 bytes under
+IRIX (when last tried, which was in 1999).  If buffer is less than
+10240, select will return before write is ready.  B<fountain> will
+still work, it will just waste time calling select and write multiple
+times until write is actually ready.
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2006 Smithsonian Astrophysical Observatory
+
+This software is released under the GNU General Public License.  You
+may find a copy at
+
+          http://www.fsf.org/copyleft/gpl.html
+
+
+=head1 VERSION
+
+This documents version 1.0.2 of B<fountain>.
+
+
+=head1 AUTHOR
+
+D. Jerius
+
+M. Tibbetts

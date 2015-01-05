@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>fountain</title>
+<link rev="made" href="mailto:none" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#options">OPTIONS</a></li>
+	<li><a href="#bugs">BUGS</a></li>
+	<li><a href="#copyright___license">COPYRIGHT &amp; LICENSE</a></li>
+	<li><a href="#version">VERSION</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>fountain - take a single input stream and write it to multiple
+output streams.</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p><strong>fountain</strong> [<strong>-b</strong> <em>buffer size</em> <strong>-h</strong> <strong>-v</strong> <strong>-V</strong>] <em>command</em>
+[<em>command</em> ...]</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p><strong>fountain</strong> reads a single input stream, from the standard input
+stream, and writes it to multiple commands.  It may also write the
+data directly to the standard output stream if the <strong>-s</strong> option is
+specified.</p>
+<p>Command (including any arguments) are specified on the command line
+(and must be quoted from the shell if they contain whitespace).  Each
+command which will be passed the input stream on its standard input
+stream.</p>
+<p>To improve overall performance, the input stream is written using
+non-blocking I/O to each command. The size of the buffer used to store
+the input stream may be specfied with the <strong>-b</strong> option.</p>
+<p>
+</p>
+<hr />
+<h1><a name="options">OPTIONS</a></h1>
+<dl>
+<dt><strong><a name="item__2db_buffer_size"><strong>-b</strong> <em>buffer size</em></a></strong><br />
+</dt>
+<dd>
+The size of the buffer (in bytes) used to transfer the input stream.  It
+defaults to 8192 bytes.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dh"><strong>-h</strong></a></strong><br />
+</dt>
+<dd>
+Output help.
+</dd>
+<p></p>
+<dt><strong><a name="item__2ds"><strong>-s</strong></a></strong><br />
+</dt>
+<dd>
+In addition to writing to the commands given by <strong>-c</strong>, act as a
+filter, copying from standard input to standard output.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dv"><strong>-v</strong></a></strong><br />
+</dt>
+<dd>
+Be a bit more verbose.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dv"><strong>-V</strong></a></strong><br />
+</dt>
+<dd>
+Output version information.
+</dd>
+<p></p></dl>
+<p>
+</p>
+<hr />
+<h1><a name="bugs">BUGS</a></h1>
+<p>Non-blocking I/O only works for buffers larger than 10240 bytes under
+IRIX (when last tried, which was in 1999).  If buffer is less than
+10240, select will return before write is ready.  <strong>fountain</strong> will
+still work, it will just waste time calling select and write multiple
+times until write is actually ready.</p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright___license">COPYRIGHT &amp; LICENSE</a></h1>
+<p>Copyright 2006 Smithsonian Astrophysical Observatory</p>
+<p>This software is released under the GNU General Public License.  You
+may find a copy at</p>
+<pre>
+          <a href="http://www.fsf.org/copyleft/gpl.html">http://www.fsf.org/copyleft/gpl.html</a></pre>
+<p>
+</p>
+<hr />
+<h1><a name="version">VERSION</a></h1>
+<p>This documents version 1.0.2 of <strong>fountain</strong>.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>D. Jerius</p>
+<p>M. Tibbetts</p>
+
+</body>
+
+</html>

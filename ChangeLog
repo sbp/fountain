@@ -1,0 +1,132 @@
+2006-03-20  Diab Jerius  <djerius@cfa.harvard.edu>
+
+	Tag: 1.0.2
+	* copyright referred to "src" instead of "fountain"
+        * removed need for common.c and common.h
+	* removed -c option; just specify the commands on the command line
+
+2006-03-09  Diab Jerius  <djerius@cfa.harvard.edu>
+	Tag: 1.0.1
+	* re autotooled. added function prototypes, cleaned up docs.
+
+2004-03-26 20:14  tibbetts
+	
+	Tag: V1_0_0
+	* configure.ac: autotooled
+
+2004-03-26 20:10  tibbetts
+
+	* GNUmakefile, INSTALL, Makefile.am, common.c, common.h,
+	  configure.ac, goption.c, main.c, main.h, pipecommand.c,
+	  process.c, version.h, fountain/Makefile.am, fountain/common.c,
+	  fountain/common.h, fountain/goption.c, fountain/main.c,
+	  fountain/main.h, fountain/pipecommand.c, fountain/process.c,
+	  fountain/usage.c, docs/Makefile.am: migrating to autotools build
+
+1999-02-03 14:25  dj
+
+	* docs/fountain.pod: [no log message]
+
+1999-02-03 14:04  dj
+
+	* goption.c, main.h, pipecommand.c, process.c, docs/fountain.pod:
+	  added -s option, which causes fountain to write input to stdout
+
+1999-02-03 13:10  dj
+
+	* INSTALL: [no log message]
+
+1999-02-03 11:52  dj
+
+	* main.c: [no log message]
+
+1999-02-03 11:52  dj
+
+	* goption.c: broke check if no "-c" option
+
+1999-02-03 10:59  dj
+
+	* process.c, usage.c: [no log message]
+
+1999-02-03 10:58  dj
+
+	* pipecommand.c: got protos for popen/pclose
+
+1999-02-03 10:58  dj
+
+	* main.c: basename of argv[0] now taken. uses version.h now
+
+1999-02-03 10:16  dj
+
+	* goption.c: prototypes for getopt properly retrieved for SunOS
+
+	  previously always checked for a command to run, even if only help
+	  or version info was requested
+
+	  uncommented commented out tf_leave
+
+1999-02-03 10:15  dj
+
+	* common.c, version.h: version info moved to version.h
+
+1999-02-03 10:14  dj
+
+	* GNUmakefile: removed install-prefix, DEBUG, PROGS; not needed or
+	  not recommended added suplib to packages line
+
+1998-08-06 12:54  axafbin
+
+	* pipecommand.c, process.c, usage.c, docs/fountain.pod: lterd docs
+	  to tell of IRIX bug with select
+
+1998-08-05 16:51  tibbetts
+
+	* GNUmakefile, common.c, common.h, fountain.cc, getopts.cc,
+	  goption.c, main.c, main.h, pipecommand.c, pipecommand.cc,
+	  pipecommand.hh, process.c, usage.c, usage.cc, version.hh: shifted
+	  the whole thing over to C from C++ to get the select statement to
+	  wrok on the SGI's.
+
+1998-08-04 14:10  axafbin
+
+	* GNUmakefile, fountain.cc, getopts.cc, pipecommand.cc,
+	  pipecommand.hh, usage.cc, usage.txt, docs/fountain.pod: DZZ ZZ 
+
+	  D:x D Dxx C D altered code to work on cface4 and sgaxaf.  select
+	  doesn't work properly so the error condition which returns EAGAIN
+	  is quite D C ltered code to work on
+
+1998-07-28 11:22  tibbetts
+
+	* GNUmakefile: [no log message]
+
+1998-07-28 10:04  tibbetts
+
+	* docs/fountain.pod:  added the documentation to the makefile
+
+1998-07-28 10:04  tibbetts
+
+	* GNUmakefile, fountain.cc, usage.cc, usage.txt: added the
+	  documentation to the makefile
+
+1998-07-28 09:08  tibbetts
+
+	* GNUmakefile, Makefile, fountain.cc, getopts.cc, version.hh:
+	  changed the makefile to the standard mst makefile.  added version
+	  header file.
+
+1998-07-27 15:39  tibbetts
+
+	* fountain.cc, getopts.cc: second swipe at installing fountain.
+	  also modified the output for bogus input params.
+
+1998-07-27 13:43  tibbetts
+
+	* Makefile, fountain.cc, getopts.cc, pipecommand.cc,
+	  pipecommand.hh, usage.cc, usage.txt: ?
+
+1998-07-27 13:43  tibbetts
+
+	* Makefile, fountain.cc, getopts.cc, pipecommand.cc,
+	  pipecommand.hh, usage.cc, usage.txt: Initial revision
+
